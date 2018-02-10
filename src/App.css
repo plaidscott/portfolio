@@ -1,0 +1,144 @@
+.splashSection {
+  background-image: url("./media/computerBackground2.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+.splashContents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: 	white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+
+}
+
+h3:hover {
+  color: green;
+}
+
+.portrait {
+  height: 250px;
+  width: 250px;
+  border-radius: 100%;
+}
+
+hr {
+  background-color: #B0CDB1;
+  border-color: #B0CDB1;
+  height: 10px;
+  width: 80px;
+  border-radius: 100px;
+}
+
+.border {
+  border: solid black;
+}
+
+.fillContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.skillsLinkContainer {
+  margin: 10px;
+  color: white;
+}
+
+.skillsLinkContainer a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.skillsLinkContainer a:hover {
+  -webkit-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
+  color: grey;
+}
+
+.skillsLinkContainer:hover {
+  -webkit-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
+  color: grey;
+}
+
+.flexCenterCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skillsSection {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0px;
+}
+
+.skillsContents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  font-size: 70px;
+  margin: 10px;
+}
+
+.slidePageToSkills {
+  height: 40vh;
+  width: 100vw;
+  position: absolute;
+  padding-top: 0px;
+  z-index: 999;
+  -webkit-animation: slideUp 1s;
+  animation: slideUp 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fadeSkillsPage {
+  height: 40vh;
+  width: 100vw;
+  position: absolute;
+  padding-top: 0px;
+  top: 165px;
+  z-index: 999;
+  -webkit-animation: fadeOut 2s;
+  animation: fadeOut 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+/*Keyframes*/
+
+@keyframes slideUp {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: 20vh;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}

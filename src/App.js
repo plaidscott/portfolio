@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { Button, ButtonToolbar, PageHeader, Navbar, Nav, NavItem, Grid, Row, Image, Col, Glyphicon } from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
+
 import "./App.css";
 import portrait from './media/scott-portrait.JPG';
 
@@ -19,16 +26,22 @@ class App extends Component {
   }
 
   handleFadeSkillsPage = () => {
-    this.setState({ fadeOut : true},
-      this.setState({ slideToSkills : false })
-    )
+    // this.setState({ fadeOut : true},
+    //   this.setState({ slideToSkills : false })
+    // )
   }
   render() {
     return (
       <div className="App">
           <div className="splashSection">
             <div className="splashContents fillContainer">
-              <Image sm={2} src={portrait} className="portrait"></Image>
+              <div class="flip-container">
+                <div class="flipper">
+                  <Image sm={2} src={portrait} className="portrait front"></Image>
+                  <div className="back"><a href="#" className="noTextDecoration" >Ready for some samples of what I can do?<br></br>Go ahead ... click ... I dare you.</a></div>
+                </div>
+              </div>
+
               <hr></hr>
               <h3>Hi, I'm <b>Scott Schermerhorn</b>. I am a Front End  <br></br>Developer currently living in Salt Lake City, UT</h3>
               <hr></hr>
@@ -36,17 +49,15 @@ class App extends Component {
                 {
                   this.state.slideToSkills ?
                   (
-                    <div className="flexCenterCol" onClick={this.handleFadeSkillsPage}>
-                      <a >Alright, I'll stop bragging</a>
-                      <Glyphicon glyph="chevron-down"></Glyphicon>
-                    </div>
+                    <Button className="flexCenterCol" bsStyle="info" onClick={this.handleFadeSkillsPage}>
+                      Click here to see some past work.
+                    </Button>
                   )
                   :
                   (
-                    <div className="flexCenterCol" onClick={this.handleSlideToSkills}>
-                      <a >Wondering what skills I can bring?</a>
-                      <Glyphicon glyph="chevron-up"></Glyphicon>
-                    </div>
+                    <Button className="flexCenterCol" bsStyle="primary" onClick={this.handleSlideToSkills}>
+                      Wondering what skills I can bring?
+                    </Button>
                   )
                 }
               </div>
@@ -55,7 +66,7 @@ class App extends Component {
           <div className={(this.state.slideToSkills ? "slidePageToSkills" : this.state.fadeOut ? "fadeSkillsPage" : "")} >
             <div className="skillsContents fillContainer ">
               <div className="spaceBetween fillContainer">
-                <div className="flex-wrapSkills">
+                <div className="flex-wrapSkills skillsOne">
                   <i class="devicon-angularjs-plain colored icon"></i>
                   <i class="devicon-react-original colored icon"></i>
                   <i class="devicon-bootstrap-plain colored icon"></i>
@@ -66,7 +77,7 @@ class App extends Component {
                   <i class="devicon-gulp-plain colored icon"></i>
                   <i class="devicon-sass-original colored icon"></i>
                 </div>
-                <div className="flex-wrapSkills">
+                <div className="flex-wrapSkills skillsTwo">
                   <i class="devicon-heroku-original colored icon"></i>
                   <i class="devicon-html5-plain colored icon"></i>
                   <i class="devicon-javascript-plain colored icon"></i>

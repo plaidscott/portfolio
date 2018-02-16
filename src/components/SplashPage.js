@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Button, ButtonToolbar, PageHeader, Navbar, Nav, NavItem, Grid, Row, Image, Col, Glyphicon } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
+import { Route, Switch, Link } from 'react-router-dom';
+
+import Projects from './Projects';
 
 import '../styles/SplashPage.css';
 import portrait from '../media/scott-portrait.JPG';
@@ -29,10 +32,10 @@ class SplashPage extends Component {
       <div className="splashPage">
         <div className="splashSection">
           <div className="splashContents fillContainer">
-            <div class="flip-container">
-              <div class="flipper">
+            <div className="flip-container">
+              <div className="flipper">
                 <Image sm={2} src={portrait} className="portrait front"></Image>
-                <div className="back"><a href="#" className="noTextDecoration" >Ready for some samples of what I can do?<br></br>Go ahead ... click ... I dare you.</a></div>
+                // <div className="back"><a href="#" className="noTextDecoration" >Ready for some samples of what I can do?<br></br>Go ahead ... click ... I dare you.</a></div>
               </div>
             </div>
 
@@ -44,13 +47,15 @@ class SplashPage extends Component {
                 this.state.slideToSkills ?
                 (
                   <Button className="flexCenterCol" bsStyle="info" onClick={this.handleFadeSkillsPage}>
-                    Click here to see some past work.
+                    <Link to="./projects" component={Projects}>
+                      Click here to see some past work.
+                    </Link>
                   </Button>
                 )
                 :
                 (
                   <Button className="flexCenterCol" bsStyle="primary" onClick={this.handleSlideToSkills}>
-                    Wondering what skills I can bring?
+                    Ready to see what skills I have?
                   </Button>
                 )
               }
@@ -61,26 +66,26 @@ class SplashPage extends Component {
           <div className="skillsContents fillContainer ">
             <div className="spaceBetween fillContainer">
               <div className="flex-wrapSkills skillsOne">
-                <i class="devicon-angularjs-plain colored icon"></i>
-                <i class="devicon-react-original colored icon"></i>
-                <i class="devicon-bootstrap-plain colored icon"></i>
-                <i class="devicon-css3-plain colored icon"></i>
-                <i class="devicon-git-plain colored icon"></i>
-                <i class="devicon-github-plain colored icon"></i>
-                <i class="devicon-gitlab-plain colored icon"></i>
-                <i class="devicon-gulp-plain colored icon"></i>
-                <i class="devicon-sass-original colored icon"></i>
+                <i className="devicon-angularjs-plain colored icon"></i>
+                <i className="devicon-react-original colored icon"></i>
+                <i className="devicon-bootstrap-plain colored icon"></i>
+                <i className="devicon-css3-plain colored icon"></i>
+                <i className="devicon-git-plain colored icon"></i>
+                <i className="devicon-github-plain colored icon"></i>
+                <i className="devicon-gitlab-plain colored icon"></i>
+                <i className="devicon-gulp-plain colored icon"></i>
+                <i className="devicon-sass-original colored icon"></i>
               </div>
               <div className="flex-wrapSkills skillsTwo">
-                <i class="devicon-heroku-original colored icon"></i>
-                <i class="devicon-html5-plain colored icon"></i>
-                <i class="devicon-javascript-plain colored icon"></i>
-                <i class="devicon-jquery-plain colored icon"></i>
-                <i class="devicon-less-plain-wordmark colored icon"></i>
-                <i class="devicon-mongodb-plain colored icon"></i>
-                <i class="devicon-mysql-plain colored icon"></i>
-                <i class="devicon-nodejs-plain colored icon"></i>
-                <i class="devicon-postgresql-plain colored icon"></i>
+                <i className="devicon-heroku-original colored icon"></i>
+                <i className="devicon-html5-plain colored icon"></i>
+                <i className="devicon-javascript-plain colored icon"></i>
+                <i className="devicon-jquery-plain colored icon"></i>
+                <i className="devicon-less-plain-wordmark colored icon"></i>
+                <i className="devicon-mongodb-plain colored icon"></i>
+                <i className="devicon-mysql-plain colored icon"></i>
+                <i className="devicon-nodejs-plain colored icon"></i>
+                <i className="devicon-postgresql-plain colored icon"></i>
               </div>
             </div>
           </div>

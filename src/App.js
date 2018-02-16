@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom';
 
 import SplashPage from './components/SplashPage.js';
+import Projects from './components/Projects.js';
 
 import "./App.css";
 
@@ -20,9 +22,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-          <SplashPage />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path='/' component={SplashPage}/>
+          <Route path="/projects" component={Projects}/>
+        </Switch>
+      </Router>
     );
   }
 }

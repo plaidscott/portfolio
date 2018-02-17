@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Image } from "react-bootstrap";
-import { Route, Switch, Link } from 'react-router-dom';
-
-import Projects from './Projects';
+import { Link } from 'react-router-dom';
 
 import '../styles/SplashPage.css';
 import portrait from '../media/scott-portrait.JPG';
@@ -35,7 +33,7 @@ class SplashPage extends Component {
             <div className="flip-container">
               <div className="flipper">
                 <Image sm={2} src={portrait} className="portrait front"></Image>
-                // <div className="back"><a href="#" className="noTextDecoration" >Ready for some samples of what I can do?<br></br>Go ahead ... click ... I dare you.</a></div>
+                <div className="back"><Link to="/projects">Learn more about What I can do.</Link></div>
               </div>
             </div>
 
@@ -47,7 +45,7 @@ class SplashPage extends Component {
                 this.state.slideToSkills ?
                 (
                   <Button className="flexCenterCol" bsStyle="info" onClick={this.handleFadeSkillsPage}>
-                    <Link to="./projects" component={Projects}>
+                    <Link to="./projects">
                       Click here to see some past work.
                     </Link>
                   </Button>
@@ -55,7 +53,7 @@ class SplashPage extends Component {
                 :
                 (
                   <Button className="flexCenterCol" bsStyle="primary" onClick={this.handleSlideToSkills}>
-                    Ready to see what skills I have?
+                    Learn more about what I can do.
                   </Button>
                 )
               }
